@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="container" >
+    <div class="row" >
+        <div class="col-lg-8 mx-auto text-center" >
+            <form action="auth/get-session-storage">
+                <div class="form-group" style="margin-top: 100px">
+                       
+                    <label for="identifiant"> Identifiant</label>
+                    <input type="text" class="form-control" id="1" placeholder="Identifiant">
+                    
+                
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Mot de passe</label>
+                     <input type="password" class="form-control" id="2" placeholder="Mot de passe">
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        
+        </div>
+    </div>
+    <?php 
+    
+        d($_SERVER['REQUEST_URI']);
+    ?>
+    
+    
+</div>

@@ -1,0 +1,73 @@
+<?= $this->doctype() ?>
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('Portfolio')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+        //    ->prependStylesheet($this->basePath('css/style.css'))
+         //   ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+            ->prependStylesheet($this->basePath('css/site.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+             ->prependFile($this->basePath('js/creative.js'))
+            ->prependFile($this->basePath('js/fileBrowse.js'))
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+            
+        ?>
+    </head> 
+  
+    <body id = "page-top">
+        
+ 
+
+    
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <a class="navbar-brand" href="#">
+       <img src="<?= $this->basePath('img/navbar.svg')?>" width="60"  title="Portfolio">
+       </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav  mr-auto">
+      <a class="nav-item nav-link active" href="#">Accueil<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="admin/addphoto">Gestion photo<span class="sr-only">(current)</span></a>
+     
+      <a class="nav-item nav-link" href="auth">Deconnexion</a>
+     
+    </div>
+   
+  </div>
+  
+</nav>
+         
+            
+   <?= $this->content ?>
+             
+
+    
+            <hr>
+            <footer>
+                <p>&copy; 2005 - <?= date('Y') ?> Alan All rights reserved.</p>
+            </footer>
+        </div>
+        <?= $this->inlineScript() ?>
+     
+         
+    
+        
+
+    </body>
+</html>
