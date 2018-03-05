@@ -40,18 +40,24 @@ class AdministrationController extends AbstractActionController{
     
 }
 
-  public function testAction()
+  public function deletAction()
     {
-       $test= $_GET['0']['id'];
-      echo json_encode(array($_GET['0']['id']));
+      $id =$this->params()->fromQuery('id');
+      //echo json_encode($id);
+       unlink(ROOT_PATH."/public/img/upload/".$id.".png");
+     $this->table->deletePhoto($id);
+     
+           
       
-     $this->table->deletePhoto($test);
-            
-        die();
-         
+     exit();
          
     }
-
+    public function editAction() {
+       
+        var_dump($_SESSION);
+        echo 'edit action';
+        exit();
+    }
 
 public function addphotoAction(){
     

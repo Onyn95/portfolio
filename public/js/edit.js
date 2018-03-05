@@ -5,12 +5,12 @@
             var id = $(this).parent().find('img').attr('value');
            
              
-             console.log(id);
+           //  console.log(id);
            $.ajax({
              
-               url: "/admin/test",
+               url: "/admin/delet",
                type: 'get',
-               dataType:'json',
+               //dataType:'json',
                data:{
                    id : id
                   
@@ -18,7 +18,8 @@
               
                }).done(function(data){
                    
-                   console.log(data);
+                  // console.log(data);
+                   location.reload();
                }
                
                

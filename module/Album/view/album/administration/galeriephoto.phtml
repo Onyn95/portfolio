@@ -36,16 +36,17 @@ and open the template in the editor.
             <?php json_encode($admin->id);?>
                   <div class="card photo " style="width: 18rem; margin-top: 25px; margin: 0px 30px 70px;">
                      <!-- <span class="glyphicon glyphicon-euro"></span>-->
-                      <div class='contenu-card'>
-                      <img class="card-img-top" id="id" value="<?=$admin->id?>"src="/img/upload/<?=$admin->id?>"alt="Card image cap">
+                      <div class='contenu-card'style="cursor:pointer" >
+                          <img class="card-img-top" id="id"  value="<?=$admin->id?>"src="/img/upload/<?=$admin->id?>"alt="Card image cap">
                       <div class='black-hover'> <i class="trashBtn fas fa-trash"></i></div>
                       </div>
                                 <div class="card-body">
                      <p class="card-text"><?=$admin->titre?></p>
            
                                 </div>
+ <a href="/admin/edit" class="btn btn-info" role="button">Editer</a>                      
                     </div>
-                      
+           
             <?php endforeach; ?>
         </div>
     </div>
