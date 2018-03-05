@@ -29,7 +29,9 @@ class AlbumController extends AbstractActionController
         
     }
 
-    public function indexAction()
+  
+    
+      public function indexAction()
     {
        
             

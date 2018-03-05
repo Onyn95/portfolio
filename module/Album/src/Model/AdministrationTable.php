@@ -19,6 +19,13 @@ class AdministrationTable {
         return $this->tableGateway->select();
     }
     
+    public function deletePhoto($id)
+           
+    {
+       
+        $this->tableGateway->delete(['id' => (int) $id]);
+    }
+    
    public function savePhoto(Administration $photo){
        
        
@@ -38,6 +45,11 @@ class AdministrationTable {
         
 
     }
+  public function editPhoto(Administration $photo){
+      
+      
+      
+  }  
        
    } 
 

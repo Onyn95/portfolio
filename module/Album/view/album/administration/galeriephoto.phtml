@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<style>
+    .contenu-card{
+        position:relative;
+    }
+    .black-hover{
+        display: none;
+        height: 100%;
+        width: 100%;
+        background: rgba(52, 58, 64, 0.8);
+        z-index: 25;
+        position: absolute;
+        top: 0;
+    }
+     .contenu-card:hover .black-hover{
+      display:flex;   
+     }
+     .trashBtn{
+         margin:auto;
+         color:white;
+     }
+    </style>
+
+
+<div class="container" >
+    <div class="row" >
+        <div class="col-lg-8 mx-auto text-center" >
+
+            <?php foreach ($admins as $admin) : ?>
+            <?php json_encode($admin->id);?>
+                  <div class="card photo " style="width: 18rem; margin-top: 25px; margin: 0px 30px 70px;">
+                     <!-- <span class="glyphicon glyphicon-euro"></span>-->
+                      <div class='contenu-card'>
+                      <img class="card-img-top" id="id" value="<?=$admin->id?>"src="/img/upload/<?=$admin->id?>"alt="Card image cap">
+                      <div class='black-hover'> <i class="trashBtn fas fa-trash"></i></div>
+                      </div>
+                                <div class="card-body">
+                     <p class="card-text"><?=$admin->titre?></p>
+           
+                                </div>
+                    </div>
+                      
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>

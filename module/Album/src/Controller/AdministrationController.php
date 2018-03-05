@@ -40,6 +40,18 @@ class AdministrationController extends AbstractActionController{
     
 }
 
+  public function testAction()
+    {
+       $test= $_GET['0']['id'];
+      echo json_encode(array($_GET['0']['id']));
+      
+     $this->table->deletePhoto($test);
+            
+        die();
+         
+         
+    }
+
 
 public function addphotoAction(){
     
@@ -99,5 +111,16 @@ public function addphotoAction(){
    
         
     }
+    
+   public function galeriephotoAction(){
+        return new ViewModel([
+            
+            //'albums'=>$this->tableAlbum->fetchAll(),
+              'admins'=>$this->table->fetchAll(),
+          
+        ]);
+      
+       
+   } 
 
 }
