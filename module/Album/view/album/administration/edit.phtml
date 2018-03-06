@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="container" >
+    <div class="row" >
+        <div class="col-lg-8 mx-auto text-center" >
+            <!--
+            <form action="/auth/get-session-storage" method="POST" >
+                <div class="form-group" style="margin-top: 100px">
+                       
+                    <label for="identifiant"> Identifiant</label>
+                    <input type="text" class="form-control" id="ident" name="ident" placeholder="Identifiant">
+                    
+                
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Mot de passe</label>
+                     <input name='mdp' type="password" class="form-control" for="mdp" placeholder="Mot de passe">
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+            -->
+            <?php
+            //set attribute permet de mettre du html
+            $form->setAttribute('action', '/admin/editphoto');
+           $title = 'Edit album';
+            $this->headTitle($title);
+            
+          //  $form->setAttribute('style', 'background:gold');
+            //prepare le tableau
+            $form->prepare();
+         
+           // d($form->get('identifiant'));
+            
+           //Ouvre une balise form
+            echo $this->form()->openTag($form);
+           //affiche un élément du form
+         
+            foreach($form->getElements() as $element ){
+                
+                echo $this->formRow($element);
+               
+            }
+            
+            
+         /*
+          
+           echo $this->formHidden($form->get('identifiant'));
+           echo $this->formRow($form->get('identifiant'));
+           echo $this->formHidden($form->get('identifiant'));
+          * */
+          
+           echo $this->form()->closeTag();
+            ?>
+        </div>
+    </div>
+   
+    
+    
+</div>

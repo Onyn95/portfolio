@@ -45,6 +45,22 @@ class AdministrationTable {
         
 
     }
+    
+     public function getPhoto($id)
+    {
+        $id = (int) $id;
+        $rowset = $this->tableGateway->select(['id' => $id]);
+        $row = $rowset->current();
+        
+        if (! $row) {
+            throw new RuntimeException(sprintf(
+                'Pas d\'identification',
+                $id
+            ));
+        }
+
+        return $row;
+    }
   public function editPhoto(Administration $photo){
       
       

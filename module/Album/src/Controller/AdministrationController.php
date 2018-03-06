@@ -54,12 +54,42 @@ class AdministrationController extends AbstractActionController{
     }
     public function editAction() {
        
-        var_dump($_SESSION);
-        echo 'edit action';
-        exit();
+          $id = (int) $this->params()->fromRoute('id', 0);
+          
+          
+           try {
+            $photo = $this->table->getPhoto($id);
+        } catch (\Exception $e) {
+            return $e;
+        }
+        
+        $form = new \Album\Form\AddPhotoForm() ;  
+      //  $form->bind($photo);
+       // $form->get('submit')->setAttribute('value', 'Edit');
+        // $form->bind($photo);
+        $form->get('envoyer')->setAttribute('value', 'Edit');
+
+        $request = $this->getRequest();
+        $viewData = ['id' => $id, 'form' => $form];
+
+        if (! $request->isPost()) {
+            return $viewData;
+        }
+
+        $form->setInputFilter($photo->getInputFilter());
+        $form->setData($request->getPost());
+
+        if (! $form->isValid()) {
+            return $viewData;
+        }
     }
 
-public function addphotoAction(){
+    public function searchAction() {
+        
+        
+        
+    }
+    public function addphotoAction(){
     
         // $album->exchangeArray($form->getData());
             $storage = new Session();
