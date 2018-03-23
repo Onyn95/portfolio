@@ -18,15 +18,19 @@
      
           ->prependStylesheet($this->basePath('css/fontawesome-all.css'))
             ->prependStylesheet($this->basePath('css/site.css'))
+         ->prependStylesheet($this->basePath('js/themes/base/jquery-ui.min.css '))
+          
         ?>
 
         <!-- Scripts -->
         <?= $this->headScript()
+       
             ->prependFile($this->basePath('js/edit.js'))
              ->prependFile($this->basePath('js/search.js'))
             ->prependFile($this->basePath('js/creative.js'))
             ->prependFile($this->basePath('js/fileBrowse.js'))
             ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-ui.min.js'))
             ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
             
         ?>
@@ -46,7 +50,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav  mr-auto">
-      <a class="nav-item nav-link active" href="#">Accueil<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="album">Accueil<span class="sr-only">(current)</span></a>
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Gestion photo

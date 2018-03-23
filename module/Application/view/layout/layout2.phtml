@@ -16,10 +16,12 @@
          //   ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
             ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
             ->prependStylesheet($this->basePath('css/site.css'))
+            ->prependStylesheet($this->basePath('css/jquery.circliful.css'))
         ?>
 
         <!-- Scripts -->
         <?= $this->headScript()
+             ->prependFile($this->basePath('js/jquery.circliful.min.js'))
              ->prependFile($this->basePath('js/creative.js'))
             ->prependFile($this->basePath('js/agrandir'))
             ->prependFile($this->basePath('js/fileBrowse.js'))
@@ -44,7 +46,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav  mr-auto">
-      <a class="nav-item nav-link active" href="#">Accueil<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="album">Accueil<span class="sr-only">(current)</span></a>
      
       <a class="nav-item nav-link" href="auth">Connexion</a>
      

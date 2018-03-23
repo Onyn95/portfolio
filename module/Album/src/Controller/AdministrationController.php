@@ -86,8 +86,22 @@ class AdministrationController extends AbstractActionController{
 
     public function searchAction() {
         
+       
+        $photo = $this->table->getNom($this->params()->fromQuery('term'));
+       
         
-        
+       
+        $datas = array();
+        foreach ($photo as $key => $data ) {
+            $datas[$key]['label'] = $data->titre;
+            $datas[$key]['value'] = $data->id;
+        }
+       
+       
+        echo json_encode($datas);
+
+       
+        die();
     }
     public function addphotoAction(){
     
@@ -123,6 +137,7 @@ class AdministrationController extends AbstractActionController{
                 
                 // Execute file filters.
                 $data = $form->getData();
+               
                 $photo = new \Album\Model\Administration();
                 $photo->exchangeArray($data);
                 $id = $this->table->savePhoto($photo);
